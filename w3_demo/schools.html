@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="KT">
+    <meta name="description" content="W3 Demo">
+    <title>W3 | Demo</title>
+
+    <!--in-document styling below-->
+    <style>
+        /*write in CSS*/
+        div {/*affects all divs in page*/
+
+            border:1px solid black;
+            padding:10px;
+            margin:5px;
+
+        }
+
+        #wrapper {/*#denotes ID; only applies to the specific element with an ID of #wrapper*/
+
+            width:900px;
+            margin:auto; /*can only use when width is applied, only affects left & right side*/
+
+        }
+
+        .border {/* . denotes CLASS; only elements with this class value will be affected*/
+
+            border:1px solid blue;
+
+        }
+
+        #nav {
+            border:1px solid red;
+        }
+
+        .pink {
+            color:rgb(219, 38, 68);
+        }
+
+        .bg-main {
+            background-color:grey;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <!--wrapper - container for all content on page-->
+    <div id="wrapper">
+
+        <!--header - first load on the screen; page title/what site is about-->  
+        <div id="header" class="border bg-main">
+
+            <h1 class="pink">Katharine M. Truchon</h1>
+
+        </div><!--/ #header-->   
+        
+        <!--nav bar - holds internal links-->
+        <div id="nav" class="border">
+
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="schools.html">SCHOOLS</a>
+            <a href="hobbies.html" class="pink">HOBBIES</a>
+
+
+        </div><!--/ #nav-->
+
+        <!--main content -- this is the area that will change from page to page-->
+        <div id="content" class="border">
+
+            <p>This is the SCHOOLS page.</p>
+
+
+        </div><!--/ #content-->
+
+        <!--footer - final area of page-->
+        <div id="footer" class="border bg-main">
+
+            <p class="pink">&copy; 202, K TRUCHON | SE111.22</p>
+
+            <!--image of your validation screenshot goes below-->
+
+
+        </div><!--/ #footer-->
+
+
+    </div><!--/ #wrapper-->
+</body>
+</html>

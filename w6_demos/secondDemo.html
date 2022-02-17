@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="KT">
+    <meta name="description" content="W6 Demo 2">
+
+    <title>W6 | JS Conditions & Functions</title>
+
+</head>
+<body>
+
+    <!--we shoooould have some sort of HTML in the document itself-->
+    <h1>W6 | JS Conditions & Functions Demo</h1>
+    <h3><a href="index.html">Intro Demo</a></h3>
+
+    <!--IN-DOCUMENT JAVASCRIPT-->
+    <script> 
+        var preference = prompt(`Welcome to Good Burger, home of the Good Burger, may I take your order? \nType 'yes' or 'no'`)
+
+        //functions must be DEFINED before they can be CALLED
+        function checkDining(_preference)
+        {
+            console.log(`checkDining() has been reached`)
+            //use console.log for testing!
+
+            if(_preference.toLowerCase() === `yes`)
+            {
+                console.log(`take-out`)
+                return `TAKE_OUT`
+            }
+            else 
+            {
+                console.log(`dine-in`)
+                return `DINE_IN`
+            }
+
+        }//checkDining() CLOSE
+
+        var dining = checkDining(preference)//return is stored to dining var to be used later
+        //console.log(_preference)//doesnt exist outside of checkDining()
+        console.log(dining)
+
+        var order = prompt(`Thank you for your ${dining} decision\nI'll be taking your order now, please enter the number of the item you wish to purchase:\n1. Hamburger\n2. French Fries\n3. Milkshake!`)
+        console.log(order)
+
+        function foodOrDrink(_order)
+        {
+            if(_order < 3)
+            {
+                return `You want some FOOD.`
+            }
+            else if(_order === 3)
+            {
+                return `Milkshake time!`
+            }
+            else
+            {
+                return `That is not a valid option.`
+            }
+        }//foodOrDrink() CLOSE
+
+        alert(`Your choice: ${foodOrDrink(Number(order))}`)
+
+        function calcPriceWithTax(_price, _tax)
+        {
+            /*JAVASCRIPT BLOCK COMMENT
+            var newPrice = _price + (_price * (_tax/100))
+            return newPrice
+            */
+
+            return _price + (_price * (_tax/100))
+        }
+        
+        function getItem(_order)
+        {
+            if(_order === `1`)
+            {
+                return `Hamburger`
+            }
+            else if(_order === `2`)
+            {
+                return `French Fries`
+            }
+            else if(_order === `3`)
+            {
+                return `Milkshake!`
+            }
+            else
+            {
+                return `Nothing`
+            }
+        }//getItem() CLOSE
+
+        var item = getItem(order)
+        console.log(item)
+
+        function getTotal(_item, _tax)
+        {
+            switch(_item)
+            {
+                case `Hamburger`:
+                    return calcPriceWithTax(3.00, _tax)
+                    break;
+
+                case `French Fries`:
+                    return calcPriceWithTax(1.00, _tax)
+                    break;
+
+                case `Milkshake!`:
+                    return calcPriceWithTax(5.00, _tax)
+                    break;
+
+                case `Nothing`:
+                    return calcPriceWithTax(0.00, _tax)
+                    break;
+            }
+        }//getTotal() CLOSE
+
+        var total = getTotal(item, 20)
+        console.log(`The total price for a ${item} with tax is $${total.toFixed(2)}`)
+
+        //CHALLENGE - ask use for money, calculate change, alert them if they havent paid enough, display change if they did :]
+
+    </script>
+
+    
+</body>
+</html>
